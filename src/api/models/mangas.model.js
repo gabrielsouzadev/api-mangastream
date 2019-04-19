@@ -33,13 +33,14 @@ const mangaSchema = new mongoose.Schema({
         index: true,
         required: true
     },
-    genders: [String]   
+    genders: [String]
 }, {
     timestamps: true,
 })
 
 mangaSchema.index({
     title: 'text',
+    genders: 1,
     stars: -1,
 }, {
     weights: {

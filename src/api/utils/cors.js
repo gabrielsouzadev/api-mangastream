@@ -1,4 +1,4 @@
-const { env, domain } = require('../config/env')
+const { env, domain } = require('../../config/env')
 
 let corsOptions = {}
 

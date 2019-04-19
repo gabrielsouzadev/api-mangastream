@@ -1,6 +1,6 @@
 const redis = require('redis')
-const { cache } = require('../config/env')
-const logger = require('../config/logger')
+const { cache } = require('../../config/env')
+const logger = require('../../config/logger')
 const client = redis.createClient(cache.port)
 
 client.on('connect', () => {
@@ -12,7 +12,8 @@ client.on('error', (err) => {
 })
 
 Cache = (req, res, next) => {
-    const key = req._queryStr
+    let key = req._queryStr
+    if (req._path.params) key = req._path.params.id
     client.get(key, (err, result) => {
         if (err == null && result != null) {
             res.send(result)

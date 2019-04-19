@@ -7,11 +7,11 @@ const service = require('restana')({
     }
 })
 const bodyParser = require('body-parser')
-const corsOptions = require('../utils/cors')
+const corsOptions = require('../api/utils/cors')
 const cors = require('cors')
-const cache = require('../middlewares/cache')
-const manga = require('../controllers/mangas.controller')
-const chapters = require('../controllers/chapters.controller')
+const cache = require('../api/middlewares/cache')
+const manga = require('../api/controllers/mangas.controller')
+const chapters = require('../api/controllers/chapters.controller')
 
 const app = service
 
