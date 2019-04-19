@@ -7,7 +7,7 @@ exports.get = async (req, res, next) => {
     req.query = queryString.parse(req._queryStr)
 
     let page_n = parseInt(req.query.page) || 1
-    let size = parseInt(req.query.size) || 10
+    let size = parseInt(req.query.size) || 20
 
     let query = {}
     let filter = {}

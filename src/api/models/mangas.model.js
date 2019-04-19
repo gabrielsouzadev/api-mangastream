@@ -38,15 +38,9 @@ const mangaSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-mangaSchema.index({
-    title: 'text',
-    genders: 1,
-    stars: -1,
-}, {
-    weights: {
-        title: 5,
-    }
-})
+mangaSchema.index({ stars: -1 })
+mangaSchema.index({ title: 'text' })
+mangaSchema.index({ title: 'text', genders: 1, }, { weights: { title: 5, genders: 4 } })
 
 module.exports = mongoose.model('Manga', mangaSchema);
 
