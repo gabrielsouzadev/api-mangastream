@@ -14,9 +14,11 @@ exports.get = async (req, res, next) => {
 
     let gender = req.query.genders
     let search = req.query.search
+    let ids = req.query.ids
 
     if (gender) filter['genders'] = { $in : gender.split(',') }
     if (search) filter['$text'] = { $search : search }
+    if (ids) filter['_id'] = { $in : ids.split(',') }
 
     query.skip = size * (page_n - 1)
     query.limit = size

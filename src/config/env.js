@@ -9,7 +9,7 @@ dotenv.config({
 module.exports = {
     env: process.env.NODE_ENV,
     port: process.env.PORT,
-    mongodb: process.env.MONGO_DB,
+    mongodb: process.env.NODE_NEV === 'test' ? process.env.MONGO_DB_TESTS : process.env.MONGO_DB,
     domain: process.env.DOMAIN,
     cache: {
         port: process.env.REDIS_PORT,

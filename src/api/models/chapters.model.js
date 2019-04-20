@@ -9,8 +9,7 @@ const chaptersSchema = new mongoose.Schema({
     chapters: [{
         chapter: {
             type: Number,
-        },
-        pages: [String],
+        }
     }]
 })
 

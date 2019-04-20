@@ -5,7 +5,8 @@ const mongoose = require('./config/mongo')
 
 mongoose.connect()
 
-app.start(port).then(() => { 
+app.start(port).then(() => {
     logger.info(`Servidor iniciado na porta ${port} (${env})`) 
 })
 
+module.exports = app;

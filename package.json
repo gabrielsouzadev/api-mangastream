@@ -5,7 +5,8 @@
     "repository": "git@github.com:gabrielsouzadev/API-Restful.git",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon ./src/index.js"
+        "dev": "nodemon ./src/index.js",
+        "test": "cross-env NODE_ENV=test mocha --recursive ./src/api/tests"
     },
     "dependencies": {
         "anumargak": "^2.2.0",
@@ -23,7 +24,11 @@
         "winston": "^3.2.1"
     },
     "devDependencies": {
+        "chai": "^4.2.0",
+        "chai-http": "^4.2.1",
         "mocha": "^6.1.4",
-        "nodemon": "^1.18.11"
+        "nodemon": "^1.18.11",
+        "sinon": "^7.3.2",
+        "sinon-mongoose": "^2.2.1"
     }
 }
