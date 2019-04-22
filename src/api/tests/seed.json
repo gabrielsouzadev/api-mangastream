@@ -1,0 +1,68 @@
+{
+    "data": [{ 
+        "title" : "07 Ghost", 
+        "thumb" : "https://unionmangas.top/assets/uploads/mangas/47079026.jpg", 
+        "stars" : "8.4", 
+        "autor" : "Yuki Amemiya", 
+        "artist" : "Yukino Ichihara", 
+        "status" : "Ativo", 
+        "description" : "Teito Klein é um ex-escravo que ingressa em uma escola Militar de Barsburg, devido a sua capacidade de usar o Zaiphon. Um poder muito misterioso e sobrenatural. Uma habilidade muito rara e por isso ao mesmo tempo muito valorizada. Acontecimentos do passado acabam fazendo com que Teito fique com amnésia.Resultando em horríveis pesadelos frequentemente. Próximo do exame,Teito e seu melhor amigo Mikage fazem uma promessa para si mesmos:nunca acandonar um ao outro.Em direção ao exame para entrar no exército Teito acaba ouvindo pessoas falando ao seu respeito. Ao prestar atenção em quem estava falando, lapsos de memórias vem como flashes, e ele lembra de quem assassinou seu querido pai, o rei do ex Reino de Raggs, o Chefe de Gabinete Ayanami.", 
+        "genders" : [
+            "acao", 
+            "fantasia", 
+            "magia", 
+            "militar", 
+            "shoujo"
+        ],
+        "chapters": 200
+    },{ 
+        "title" : "01 - Zero one", 
+        "thumb" : "https://unionmangas.top/assets/uploads/mangas/aead7109.jpg", 
+        "stars" : "5.7", 
+        "autor" : "Oku Hiroya", 
+        "artist" : "Oku Hiroya", 
+        "status" : "Completo", 
+        "description" : "O ano é 2028, o local em Nova Koshigaya. Um menino jovem, Isurugi Neru, vive em uma família pobre e é forçado a abandonar a escola para que ele possa encontrar seu próprio caminho na vida. Neru, por outro lado, só pensa em uma coisa: vingar-se de Yagami, um colega de classe, que é especialmente talentoso e humilhou Neru várias vezes.", 
+        "genders" : [
+            "acao", 
+            "artes-marciais", 
+            "ecchi", 
+            "ficcao", 
+            "seinen"
+        ],
+        "chapters": 200
+    },{  
+        "title" : "Candy Boy", 
+        "thumb" : "https://unionmangas.top/assets/uploads/mangas/9dfc4802.jpg", 
+        "stars" : "9.14", 
+        "autor" : "TOUGE Hiro", 
+        "artist" : "TOUGE Hiro", 
+        "status" : "Completo", 
+        "description" : "A história gira em torno de duas adolescentes, Sakurai Yukino e Sakurai Kanade, irmãs gêmeas não idênticas. Companheiras de quarto no dormitório da escola que frequentam no ensino médio. Elas aproveitam os dias que passam na escola junto com suas amigas, entre elas Kamiyama Sakuya, que tem uma profunda admiração por Kanade. A estória conta o dia a dia das garotas.", 
+        "genders" : [
+            "comedia", 
+            "seinen", 
+            "shoujo-ai", 
+            "slice-of-life", 
+            "vida-escolar", 
+            "yuri"
+        ],
+        "chapters": 200
+    },{ 
+        "title" : "Gekkan Shoujo Nozaki-kun", 
+        "thumb" : "https://unionmangas.top/assets/uploads/mangas/7f370920.jpg", 
+        "stars" : "9", 
+        "autor" : "Tsubaki Izumi", 
+        "artist" : "Tsubaki Izumi", 
+        "status" : "Ativo", 
+        "description" : "Sakura Chiyo confessa seu amor pelo Nozaki-kun, mas ele confunde-a como uma fã! Incapaz de transmitir seus sentimentos, as coisas começam a ficar complicadas quando Nozaki-kun a convida para ir à sua casa, onde ela descobre que ele é um artista de mangá shoujo. Sakura então decide ser a assistente de Nozaki-kun, a fim de se aproximar dele. Agora, Sakura tem que transmitir os seus verdadeiros sentimentos enquanto a sua relação com Nozaki se desenvolve.", 
+        "genders" : [
+            "comedia", 
+            "romance", 
+            "shounen", 
+            "slice-of-life", 
+            "vida-escolar"
+        ],
+        "chapters": 200
+    }]
+}

@@ -12,8 +12,8 @@ client.on('error', (err) => {
 })
 
 Cache = (req, res, next) => {
-    let key = req._queryStr
-    if (req._path.params) key = req._path.params.id
+    let key = req.url
+
     client.get(key, (err, result) => {
         if (err == null && result != null) {
             res.send(result)

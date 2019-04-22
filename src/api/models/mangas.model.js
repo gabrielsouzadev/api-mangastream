@@ -6,8 +6,12 @@ const mangaSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        index: true,
-        unique: true
+        index: true
+    },
+    chapters: {
+        type: Number,
+        required: true,
+        index: true
     },
     stars: {
         type: Number,
@@ -39,6 +43,7 @@ const mangaSchema = new mongoose.Schema({
 })
 
 mangaSchema.index({ stars: -1 })
+mangaSchema.index({ genders: -1 })
 mangaSchema.index({ title: 'text' })
 mangaSchema.index({ title: 'text', genders: 1, }, { weights: { title: 5, genders: 4 } })
 

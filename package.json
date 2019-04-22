@@ -6,6 +6,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "nodemon ./src/index.js",
+        "prod": "cross-env NODE_ENV=production pm2 start pm2.config.json",
         "test": "cross-env NODE_ENV=test mocha --recursive ./src/api/tests"
     },
     "dependencies": {
@@ -25,10 +26,8 @@
     },
     "devDependencies": {
         "chai": "^4.2.0",
-        "chai-http": "^4.2.1",
         "mocha": "^6.1.4",
         "nodemon": "^1.18.11",
-        "sinon": "^7.3.2",
-        "sinon-mongoose": "^2.2.1"
+        "supertest": "^4.0.2"
     }
 }
