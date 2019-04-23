@@ -1,15 +1,17 @@
 const Chapter = require('../models/chapters.model')
 const logger = require('../../config/logger')
+const send = require('@polka/send-type')
 
 exports.getById = async (req, res, next) => {
 
-    let params = req._path.params;
+    let params = req.params;
     let query = {}
 
     query.limit = 1
 
-    Chapter.findOne({ manga_id: params.id }, { 'chapters.pages': 0 }, query, (err, data) => {
+    Chapter.findOne({ manga_id: params.id }, {}, query, (err, data) => {
         if (err) logger.error(err)
-        res.send(data)
+        if (!data) data = { message: 'Manga not found' }
+        send(res, 200, data)
     }).lean()
 }

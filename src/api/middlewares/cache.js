@@ -16,13 +16,13 @@ Cache = (req, res, next) => {
 
     client.get(key, (err, result) => {
         if (err == null && result != null) {
-            res.send(result)
+            res.end(result)
         } else {
-            res.sendResponse = res.send
-            res.send = (body) => {
-                client.set(key, JSON.stringify(body), 'EX', cache.expire, (err, reply) => {
+            res.endResponse = res.end
+            res.end = (body) => {
+                client.set(key, body, 'EX', cache.expire, (err, reply) => {
                     if (reply == 'OK')
-                        res.sendResponse(body)
+                        res.endResponse(body)
                 })
             }
             next()

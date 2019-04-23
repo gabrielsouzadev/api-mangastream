@@ -6,17 +6,16 @@ const mangaSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        index: true
+        index: true,
     },
     chapters: {
         type: Number,
         required: true,
-        index: true
     },
     stars: {
         type: Number,
         required: true,
-        index: true
+        index: true,
     },
     autor: {
         type: String,
@@ -24,20 +23,20 @@ const mangaSchema = new mongoose.Schema({
     },
     artist: {
         type: String,
-        required: true
+        required: true,
     },
     status: {
         type: String,
         enum: status,
         default: 'Ativo',
-        required: true
+        required: true,
     },
     description: {
         type: String,
         index: true,
-        required: true
+        required: true,
     },
-    genders: [String]
+    genders: [String],
 }, {
     timestamps: true,
 })

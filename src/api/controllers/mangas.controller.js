@@ -1,10 +1,8 @@
 const Manga = require('../models/mangas.model')
 const logger = require('../../config/logger')
-const queryString = require('query-string')
+const send = require('@polka/send-type')
 
 exports.get = async (req, res, next) => {
-
-    req.query = queryString.parse(req._queryStr)
 
     let page_n = parseInt(req.query.page) || 1
     let size = parseInt(req.query.size) || 20
@@ -23,9 +21,10 @@ exports.get = async (req, res, next) => {
     query.skip = size * (page_n - 1)
     query.limit = size
 
-    Manga.find(filter, { description: 0, thumb: 0, autor: 0, artist: 0 }, query, (err, data) => {
+    Manga.find(filter, { description: 0, thumb: 0, autor: 0, artist: 0, createdAt: 0, updatedAt: 0, __v: 0 }, query, (err, data) => {
         if (err) logger.error(err)
-        res.send(data)
+        if (!data) data = { message: 'Manga not found' }
+        send(res, 200, data)
     }).lean()
 }
 
@@ -38,6 +37,7 @@ exports.getById = async (req, res, next) => {
 
     Manga.findOne({ _id: params.id }, { thumb: 0 }, query, (err, data) => {
         if (err) logger.error(err)
-        res.send(data)
+        if (!data) data = { message: 'Manga not found' }
+        send(res, 200, data)
     }).lean()
 }

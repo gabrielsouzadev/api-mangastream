@@ -1,25 +1,24 @@
-const anumargak = require('anumargak')
-const service = require('restana')({ routerFactory: (options) => { return anumargak(options) } })
+const polka = require('polka')()
 const bodyParser = require('body-parser')
+const compression = require('compression')
 const corsOptions = require('../api/utils/cors')
 const cors = require('cors')
 const cache = require('../api/middlewares/cache')
 const manga = require('../api/controllers/mangas.controller')
 const chapters = require('../api/controllers/chapters.controller')
-const error = require('../api/utils/error')
 const mongoose = require('./mongo')
 const { env } = require('./env')
 
 mongoose.connect()
 
-const app = service
+const app = polka
+
+app.use(compression())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// app.use(cors(corsOptions))
-
-app.use(error)
+app.use(cors(corsOptions))
 
 if ( env === 'production') app.use(cache)
 

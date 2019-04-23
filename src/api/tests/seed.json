@@ -1,5 +1,5 @@
 {
-    "data": [{ 
+    "mangas": [{ 
         "title" : "07 Ghost", 
         "thumb" : "https://unionmangas.top/assets/uploads/mangas/47079026.jpg", 
         "stars" : "8.4", 
@@ -64,5 +64,27 @@
             "vida-escolar"
         ],
         "chapters": 200
+    }],
+    "chapters": [{  
+        "manga_id" : "5cb15310b426196c969cfcc3", 
+        "chapters" : [
+            {
+                "chapter" : 0
+            }, 
+            {
+                "chapter" : 1
+            }, 
+            {
+                "chapter" : 2
+            }
+        ]
+    },
+    {  
+        "manga_id" : "5cb15310b426196c969cfcc4", 
+        "chapters" : [
+            {
+                "chapter" : 0
+            }
+        ]
     }]
 }
