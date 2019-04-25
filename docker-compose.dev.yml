@@ -20,6 +20,7 @@ services:
       options:
         max-size: "100MB"
         max-file: "3"
+    command: ['yarn', 'dev']
   
   nginx:
     image: nginx:alpine

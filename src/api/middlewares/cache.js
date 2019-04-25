@@ -1,7 +1,7 @@
 const redis = require('redis')
 const { cache } = require('../../config/env')
 const logger = require('../../config/logger')
-const client = redis.createClient(cache.port)
+const client = redis.createClient(cache.port, cache.host)
 
 client.on('connect', () => {
     logger.info(`Redis conectado na porta ${cache.port}`)
