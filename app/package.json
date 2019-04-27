@@ -1,16 +1,13 @@
 {
-    "name": "api",
+    "name": "app",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "src/index.js",
     "repository": "git@github.com:gabrielsouzadev/API-Restful.git",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon ./src/index.js",
-        "test": "cross-env NODE_ENV=test mocha --recursive ./src/api/tests",
-        "start": "cross-env NODE_ENV=production pm2 start pm2.config.json",
-        "docker:test": "docker-compsoe -f docker-compose.test.yml up",
-        "docker:dev": "docker-compose -f docker-compose.dev.yml up",
-        "docker:prod": "docker-compose -f docker-compose.yml up"
+        "dev": "nodemon -L app/index.js",
+        "test": "cross-env NODE_ENV=test mocha --recursive app/api/tests",
+        "start": "cross-env NODE_ENV=production pm2-docker start app/index.js -i max"
     },
     "dependencies": {
         "@polka/send-type": "^0.5.2",

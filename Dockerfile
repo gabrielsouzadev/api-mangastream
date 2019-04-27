@@ -1,13 +1,17 @@
 FROM node:latest
 
-WORKDIR /usr/share/nginx/html/api
+RUN mkdir /src
 
-COPY package.json .
+RUN yarn global add nodemon
+
+WORKDIR /src
+
+ADD app/package.json /src/package.json
 
 RUN yarn
 
-COPY . .
+ADD app/nodemon.json /src/nodemon.json
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD yarn dev

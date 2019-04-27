@@ -16,4 +16,3 @@ exports.connect = () => {
     mongoose.connect(mongodb, { keepAlive: 1, useNewUrlParser: true })
     return mongoose.connection
 }
-

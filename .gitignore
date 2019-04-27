@@ -88,4 +88,10 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# VSCode
+.vscode
+
+# Lock
+*.lock
+
 # End of https://www.gitignore.io/api/node
