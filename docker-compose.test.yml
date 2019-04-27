@@ -26,7 +26,7 @@ services:
         max-file: "3"
     command: yarn test
     environment:
-        - NODE_ENV=production
+        - NODE_ENV=test
 
   nginx:
     image: nginx:latest
