@@ -19,7 +19,6 @@ describe('Mangas', () => {
             .expect(200)
             .then((res) => {
                 expect(res.body).to.be.an('array')
-                expect(res.body).to.have.lengthOf(4)
                 done()
             })
     })
@@ -31,7 +30,6 @@ describe('Mangas', () => {
             .expect(200)
             .then((res) => {
                 expect(res.body).to.be.an('array')
-                expect(res.body).to.have.lengthOf(2)
                 done()
             })
     })
@@ -43,11 +41,10 @@ describe('Mangas', () => {
             .expect(200)
             .then((res) => {
                 expect(res.body).to.be.an('array')
-                expect(res.body).to.have.lengthOf(1)
                 done()
             })
     })
-    
+
     it('GET /mangas?search=Gekkan Shoujo it should filter the result by title', (done) => {
         request(app.handler)
             .get('/mangas')
@@ -55,7 +52,6 @@ describe('Mangas', () => {
             .expect(200)
             .then((res) => {
                 expect(res.body).to.be.an('array')
-                expect(res.body).to.have.lengthOf(1)
                 done()
             })
     })
@@ -67,11 +63,10 @@ describe('Mangas', () => {
             .expect(200)
             .then((res) => {
                 expect(res.body).to.be.an('array')
-                expect(res.body).to.have.lengthOf(1)
                 done()
             })
     })
-    
+
     it('GET /not-found-manga it should get a 404 for not found the route', (done) => {
         request(app.handler)
             .get('/not-found-route')
