@@ -1,9 +1,7 @@
 version: "3"
 
 services:
-  api:
-    container_name: api
-    restart: on-failure
+  sut:
     build: .
     ports:
       - "3000:3000"
@@ -13,16 +11,18 @@ services:
       - mongo
       - redis
     depends_on:
-      - mongo
       - redis
-    command: yarn test
+      - mongo
     environment:
-        - NODE_ENV=test
-        - PORT=3000
-        - MONGO_DB_TESTS=mongodb://mongo:27017/manga_stream_tests
-        - REDIS_PORT=6379
-        - REDIS_EXPIRE=1800
-        - REDIS_HOST=redis
+      - NODE_ENV=test
+      - PORT=3000
+      - MONGO_DB_TESTS=mongodb://mongo:27017/manga_stream_tests
+      - REDIS_PORT=6379
+      - REDIS_EXPIRE=1800
+      - REDIS_HOST=redis
+    networks:
+      - back-tier
+    command: yarn test
 
   mongo:
     image: mongo:latest
@@ -32,6 +32,8 @@ services:
       - mongo:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - back-tier
 
   redis:
     image: redis:latest
@@ -41,7 +43,12 @@ services:
       - redis:/data/
     ports:
       - "6379:6379"
+    networks:
+      - back-tier
 
 volumes:
   mongo:
   redis:
+
+networks:
+  back-tier:
